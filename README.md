@@ -4,7 +4,7 @@ Old school runescape (osrs) grand exchange api
 
 ## What it does
 
-This wrapper converts the hiscores data into a more usable JSON object and provides extra information about items in the GE
+This wrapper GE data into a more usable JSON object and provides extra information about items in the GE
 
 ---
 ## Installation
@@ -26,11 +26,9 @@ Once you import it you can call the functions asynchronously:
 ```typescript
 const item = await ge.getItem(4151);
 const items = await getItems('rune');
+const graphData = await getGraphData();
+const lastUpdatedDate = await getLastUpdatedDate();
 ```
-
-`getItem` will return a json object of an item.  
-`getItems` will return a an array of items based on the word/letters you input.
-
 ## What you'll get
 
 `getItem` returns an item object that looks like this:
@@ -77,3 +75,12 @@ const items = await getItems('rune');
         ]
     }
 ```
+
+`getGraphData` Graph shows the prices each day of a given item for the previous 180 days. The timecode is the number of milliseconds that has passed since 1 January 1970 and the price is the market value of the item for the given day. When no price information is available, then a value of zero is returned.
+
+```typescript
+
+  {"daily":{"1419897600000":15633853,"1419984000000":15475988,"1420070400000":15379017},"average":{"1419897600000":14708793,"1419984000000":14764787,"1420070400000":148288055}}
+```
+
+`getLastUpdatedDate` returns the runedate of when the Grand Exchange Database was last updated.

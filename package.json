@@ -1,6 +1,6 @@
 {
   "name": "osrs-ge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Old school runescape (osrs) grand exchange api",
   "main": "index.js",
   "scripts": {
