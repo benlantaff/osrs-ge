@@ -4,7 +4,7 @@ Old school runescape (osrs) grand exchange api
 
 ## What it does
 
-This wrapper GE data into a more usable JSON object and provides extra information about items in the GE
+This wrapper gets GE data into a more usable JSON object and provides extra information about items in the GE
 
 ---
 ## Installation
@@ -17,17 +17,15 @@ $ npm install osrs-ge
 
 ## How to use
 
-Install the package and then import it into your project:
-
-const ge = require('osrs-ge');
-
+Install the package and then import it into your project
 Once you import it you can call the functions asynchronously:
 
 ```typescript
+const ge = require('osrs-ge');
 const item = await ge.getItem(4151);
-const items = await getItems('rune');
-const graphData = await getGraphData();
-const lastUpdatedDate = await getLastUpdatedDate();
+const items = await ge.getItems('rune');
+const graphData = await ge.getGraphData();
+const lastUpdatedDate = await ge.getLastUpdatedDate();
 ```
 ## What you'll get
 
